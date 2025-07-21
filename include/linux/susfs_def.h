@@ -41,15 +41,9 @@
 #define DEFAULT_SUS_MNT_GROUP_ID 1000 /* used by mount->mnt_group_id */
 
 /*
- * inode->i_state => storing flag 'INODE_STATE_'
  * mount->mnt.susfs_mnt_id_backup => storing original mnt_id of normal mounts or custom sus mnt_id of sus mounts
  * task_struct->susfs_task_state => storing flag 'TASK_STRUCT_'
  */
-
-#define INODE_STATE_SUS_PATH BIT(24)
-#define INODE_STATE_SUS_MOUNT BIT(25)
-#define INODE_STATE_SUS_KSTAT BIT(26)
-#define INODE_STATE_OPEN_REDIRECT BIT(27)
 
 #define TIF_NON_ROOT_USER_APP_PROC 33 // thread_info->flags is unsigned long :D
 
@@ -65,7 +59,6 @@
 #define BIT_SUS_MOUNT BIT(25)
 #define BIT_SUS_KSTAT BIT(26)
 #define BIT_OPEN_REDIRECT BIT(27)
-
 #define ND_STATE_LOOKUP_LAST 32
 #define ND_STATE_OPEN_LAST 64
 #define ND_STATE_LAST_SDCARD_SUS_PATH 128
